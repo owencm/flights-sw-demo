@@ -34,6 +34,8 @@ document.querySelector('#submit').addEventListener('click', function () {
     }
   }
   xhr.send();
+  document.querySelector('#preCheckin').style.display = 'none';
+  document.querySelector('#postCheckin').style.display = 'block';
 });
 
 function sendSubscriptionToServer(subscription) {

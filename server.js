@@ -5,6 +5,8 @@ var http = require('http');
 var file = new static.Server('./');
 var subscription;
 
+console.log('Server started. Listening on port 8080');
+
 http.createServer(function (req, response) {
 	var body = '';
 	req.on('data', function (chunk) {
@@ -21,10 +23,9 @@ http.createServer(function (req, response) {
     		console.log('checked in');
     		setTimeout(function() {
     			payload = {registration_ids: [subscription.subscriptionId]};
-    			request({method: 'POST', url: subscription.endpoint, body: payload, json: true, headers: {'Authorization':'key=AIzaSyC8wnIpQAJbKIKWSEdo-wJMImP7TDPzyko'}}, function (a, b, c) {
-    				console.log(a, b, c);
+    			request({method: 'POST', url: subscription.endpoint, body: payload, json: true, headers: {'Authorization':'key=AIzaSyC8wnIpQAJbKIKWSEdo-wJMImP7TDPzyko'}}, function () {
     			});
-    		}, 0);
+    		}, 8000);
     	} else {
     		file.serve(req, response);
     	}

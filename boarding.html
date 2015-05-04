@@ -1,0 +1,78 @@
+<!doctype>
+<html>
+<head>
+	<style type='text/css'>
+		* {
+			box-sizing: border-box;
+		}
+		body, html, h1, h2, h3, p {
+			margin: 0;
+			padding: 0;
+			font-family: 'Trebuchet MS Regular', sans-serif;
+		}
+		#header {
+			width: 100%;
+		}
+		#contents {
+			margin: 0 20px;
+		}
+		h1 {
+			color: #bbb;
+			text-align: center;
+			padding: 20px;
+		}
+		p {
+			padding-bottom: 20px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		img#qr {
+			width: 100%;
+			padding: 20px 50px 40px 50px;
+		}
+		img#flightBox {
+			width: 100%;
+			padding-bottom: 20px;
+		}
+		#info {
+			font-size: 1.5em;
+		}
+		#info .field {
+			display: flex;
+			margin-bottom: 20px;
+		}
+		#info .label {
+			flex: 1;
+			color: #888;
+			font-weight: lighter;
+		}
+	</style>
+</head>
+<body>
+	<img src='header.png' id='header'></img>
+		<h1>Time to board</h1>
+		<div id='contents'>	
+			<p>Scan your boarding pass at any of the security check points.</p>
+			<img id='qr' src='qrcode.jpg'></img>
+			<div id='info'>
+				<div class='field'>
+					<div class='label'>Gate</div>
+					<div class='value'>44A</div>
+				</div>
+				<div class='field'>
+					<div class='label'>Terminal</div>
+					<div class='value'>3</div>
+				</div>
+				<div class='field'>
+					<div class='label'>Gate opens</div>
+					<div class='value'>10.15am</div>
+				</div>
+				<div class='field'>
+					<div class='label'>Last call</div>
+					<div class='value'>10:55am</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
