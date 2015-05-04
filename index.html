@@ -1,0 +1,135 @@
+<!doctype>
+<html>
+<head>
+	<style type='text/css'>
+		* {
+			box-sizing: border-box;
+		}
+		body, html, h1, h2, h3, p {
+			margin: 0;
+			padding: 0;
+			font-family: 'Trebuchet MS Regular', sans-serif;
+		}
+		#header {
+			width: 100%;
+		}
+		#contents {
+			margin: 20px;
+		}
+		h1 {
+			color: #bbb;
+			text-align: center;
+			padding-bottom: 20px;
+		}
+		#flightBox {
+			padding-bottom: 20px;
+		}
+		#flightBox img {
+			width: 100%;
+		}
+		p {
+			padding-bottom: 20px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		#form {
+			padding-bottom: 0px;
+		}
+		.field {
+			display: flex;
+			margin-bottom: 20px;
+		}
+		.field input {
+			border: 1px solid purple;
+			font-size: 0.8em;
+			padding: 5px;
+			width: 180px;
+		}
+		.field label {
+			color: #888;
+			font-weight: lighter;
+			flex: 1;
+		}
+		#divider {
+			height: 1px;
+			background-color: #ddd;
+			margin-bottom: 20px;
+		}
+		#checkboxContainer {
+			display: flex;
+		}
+		#optIn {
+			margin-bottom: 20px;
+		}
+		#optInText {
+			flex: 1;
+		}
+		#optInSubtext {
+			font-size: 0.8em;
+			color: #aaa;
+			padding-right: 40px;
+		}
+		#optInCheckbox {
+			color: purple;
+			background-color: white;
+			border: 1px solid purple;
+			width: 20px;
+			height: 20px;
+			padding-left: 5px;
+		}
+		#submit {
+			background-color: #55266c;
+			color: white;
+			font-weight: lighter;
+			padding: 10px 15px;
+			float: right;
+		}
+		#overlay {
+			-webkit-transition: all 0.3s;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: black;
+			opacity: 0;
+			display: none;
+		}
+		#overlay.visible {
+			opacity: 0.5;
+		}
+	</style>
+	<link rel="manifest" href="manifest.json">
+</head>
+<body>
+	<div id='overlay'></div>
+	<img src='header.png' id='header'></img>
+	<div id='contents'>
+		<h1>Time to fly</h1>
+		<p>Please confirm your details below to check in.</p>
+		<div id='flightBox'>
+			<img src='flightBox.png'></img>
+		</div>
+		<section id='form'>
+			<div class='field'>
+				<label for='name'>Full name</label>
+				<input type='text' id='name' value='Alex Russell'></input>
+			</div>
+			<div class='field'>
+				<label for='passport'>Passport number</label>
+				<input type='text' id='passport' value='8007076561'></input>
+			</div>
+		</section>
+		<div id='divider'></div>
+		<section id='optIn'>
+			<div id='checkboxContainer'>
+				<div id='optInText'>Get notifications for flight updates</div>
+				<div id='optInCheckbox'></div>
+			</div>
+			<div id='optInSubtext'>
+				Get a push notification to your phone for gate changes and flight delays.
+			</div>
+		</section>
+		<div id='submit'>Confirm check in</img></div>
+	</div>
+	<script type='text/javascript' src='main.js'></script>
+</body>
+</html>
