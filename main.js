@@ -21,6 +21,7 @@ document.body.addEventListener('click', function () {
         serviceWorkerRegistration.pushManager.subscribe()
           .then(function(subscription) {
             overlay.style.display = 'none';
+            document.querySelector('img').src = 'screen3.png';
             console.log('subscribed successfully', subscription)
             // The subscription was successful
             sendSubscriptionToServer(subscription);

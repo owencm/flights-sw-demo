@@ -3,7 +3,6 @@ var request = require('request');
 var http = require('http');
 
 var file = new static.Server('./');
-var subscription;
 
 console.log('Server started. Listening on port 8080');
 
@@ -16,7 +15,7 @@ http.createServer(function (req, response) {
     	if (req.url == '/subscription') {
     		console.log('Received a subscription');
     		response.end();
-    		subscription = JSON.parse(body);
+    		var subscription = JSON.parse(body);
     		console.log('Set subscriptionId to '+subscription.subscriptionId);
     		setTimeout(function() {
     			payload = {registration_ids: [subscription.subscriptionId]};
