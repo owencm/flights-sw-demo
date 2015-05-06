@@ -18,14 +18,11 @@ http.createServer(function (req, response) {
     		response.end();
     		subscription = JSON.parse(body);
     		console.log('Set subscriptionId to '+subscription.subscriptionId);
-    	} else if (req.url == '/checkin') {
-    		response.end();
-    		console.log('checked in');
     		setTimeout(function() {
     			payload = {registration_ids: [subscription.subscriptionId]};
     			request({method: 'POST', url: subscription.endpoint, body: payload, json: true, headers: {'Authorization':'key=AIzaSyC8wnIpQAJbKIKWSEdo-wJMImP7TDPzyko'}}, function () {
     			});
-    		}, 8000);
+    		}, 5000);
     	} else {
     		file.serve(req, response);
     	}
